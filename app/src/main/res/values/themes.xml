@@ -2,15 +2,18 @@
     <!-- Base application theme. -->
     <style name="Theme.Fitnessandfinance" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="android:windowBackground">#ece9e6</item>
+        <item name="android:windowBackground">#ffffff</item>
 
         <item name="colorPrimary">#333f48</item>
-        <item name="colorPrimaryVariant">#596670</item>
-        <item name="colorOnPrimary">#f6f6f2</item>
+        <item name="colorPrimaryVariant">#f6f6f2</item>
+        <item name="colorOnPrimary">#ece9e6</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#cff532</item>
         <item name="colorSecondaryVariant">#778E1B</item>
         <item name="colorOnSecondary">#333f48</item>
+
+        <item name="colorAccent">#ff00ff</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">#222930</item>
         <!-- Customize your theme here. -->
@@ -25,11 +28,12 @@
 
     <style name="TextAppearance.FitnessNFinance.CardView.Heading" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">?colorOnPrimary</item>
+        <item name="android:textColor">?colorPrimaryVariant</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextAppearance.FitnessNFinance.CardView.Content" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">?colorOnPrimary</item>
+        <item name="android:textColor">?colorSecondary</item>
     </style>
 </resources>

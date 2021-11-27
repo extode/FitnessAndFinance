@@ -10,7 +10,7 @@
     </data>
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
@@ -21,7 +21,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:minWidth="150dp">
 
                 <TextView
                     android:id="@+id/finance_card_item_2_title"
@@ -39,6 +40,7 @@
 
                 <TextView
                     android:id="@+id/finance_card_item_1_counter"
+                    cash="@{categoryItem.cash}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -46,8 +48,7 @@
                     android:textAppearance="@style/TextAppearance.FitnessNFinance.CardView.Content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    cash="@{categoryItem.cash}"
-                    tools:text="82135712" />
+                    tools:text="125 Р" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
