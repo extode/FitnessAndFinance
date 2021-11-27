@@ -6,6 +6,8 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.compilinghappen.fitnessandfinance.R
 import com.compilinghappen.fitnessandfinance.databinding.FragmentFinanceBinding
 import com.compilinghappen.fitnessandfinance.room.FNFDatabase
@@ -27,6 +29,7 @@ class FinanceFragment : Fragment() {
 
         val adapter = FinanceAdapter()
         binding.financeRecyclerview.adapter = adapter
+        binding.financeRecyclerview.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
 
         viewModel.categoryItems.observe(viewLifecycleOwner) {
             adapter.applyData(it)

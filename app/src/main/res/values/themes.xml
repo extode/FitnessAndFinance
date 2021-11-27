@@ -4,13 +4,13 @@
         <!-- Primary brand color. -->
         <item name="android:windowBackground">#ffffff</item>
 
-        <item name="colorPrimary">#333f48</item>
-        <item name="colorPrimaryVariant">#f6f6f2</item>
-        <item name="colorOnPrimary">#ece9e6</item>
+        <item name="colorPrimary">@color/dark2</item>
+        <item name="colorPrimaryVariant">@color/light1</item>
+        <item name="colorOnPrimary">@color/light2</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#cff532</item>
+        <item name="colorSecondary">@color/yellow</item>
         <item name="colorSecondaryVariant">#778E1B</item>
-        <item name="colorOnSecondary">#333f48</item>
+        <item name="colorOnSecondary">@color/dark2</item>
 
         <item name="colorAccent">#ff00ff</item>
 
@@ -19,6 +19,9 @@
         <!-- Customize your theme here. -->
 
         <item name="cardViewStyle">@style/Widget.FitnessNFinance.CardView</item>
+
+        <item name="progressBarForegroundColor">?colorSecondary</item>
+        <item name="progressBarBackgroundColor">#50000000</item>
     </style>
     
     <style name="Widget.FitnessNFinance.CardView" parent="Widget.MaterialComponents.CardView">

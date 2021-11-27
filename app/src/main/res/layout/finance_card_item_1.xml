@@ -10,19 +10,18 @@
     </data>
 
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:padding="8dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:minWidth="150dp">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/finance_card_item_2_title"
@@ -43,11 +42,13 @@
                     cash="@{categoryItem.cash}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
                     android:textAppearance="@style/TextAppearance.FitnessNFinance.CardView.Content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/finance_card_item_2_title"
                     tools:text="125 Р" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
