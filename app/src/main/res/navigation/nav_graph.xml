@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/categoryEditorFragment"
+        android:name="com.compilinghappen.fitnessandfinance.categoryeditor.CategoryEditorFragment"
+        android:label="Редактор категорий"
+        tools:layout="@layout/fragment_category_editor">
+        <action
+            android:id="@+id/action_categoryEditorFragment_to_categoryBuilderFragment"
+            app:destination="@id/categoryBuilderFragment" />
+        <argument
+            android:name="newCategoryName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="newCategoryFilters"
+            app:argType="string[]"
+            app:nullable="true" />
+        <argument
+            android:name="newCategoryLimit"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryBuilderFragment"
+        android:name="com.compilinghappen.fitnessandfinance.categoryeditor.CategoryBuilderFragment"
+        android:label="Создание категории"
+        tools:layout="@layout/fragment_category_builder">
+        <action
+            android:id="@+id/action_categoryBuilderFragment_to_categoryEditorFragment"
+            app:destination="@id/categoryEditorFragment"
+            app:popUpTo="@id/categoryEditorFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/financeFragment"
+        android:name="com.compilinghappen.fitnessandfinance.finance.FinanceFragment"
+        android:label="Финансы"
+        tools:layout="@layout/fragment_finance">
+        <action
+            android:id="@+id/action_financeFragment_to_categoryEditorFragment"
+            app:destination="@id/categoryEditorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.compilinghappen.fitnessandfinance.MainFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_financeFragment"
+            app:destination="@id/financeFragment" />
+    </fragment>
+</navigation>
