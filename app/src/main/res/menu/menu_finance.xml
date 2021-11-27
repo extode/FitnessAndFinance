@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/financeFragment"
+        android:id="@+id/categoryEditorFragment"
         android:title="@string/edit_categories" />
     <item
         android:id="@+id/action_enable_notifications"

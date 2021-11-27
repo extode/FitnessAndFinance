@@ -16,5 +16,6 @@
         <item name="cardViewStyle">@style/Widget.FitnessNFinance.CardView</item>
 
         <item name="progressBarBackgroundColor">#2DFFFFFF</item>
+        <item name="progressBarForegroundColor">?colorSecondary</item>
     </style>
 </resources>

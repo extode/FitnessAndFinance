@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/financeFragment"
+        android:icon="@drawable/ic_finance_48"
+        android:title="Финансы" />
+    <item
+        android:id="@+id/fitnessFragment"
+        android:icon="@drawable/ic_fitness_48"
+        android:title="Фитнес" />
+</menu>

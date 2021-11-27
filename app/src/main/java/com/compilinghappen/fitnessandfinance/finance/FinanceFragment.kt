@@ -47,10 +47,8 @@ class FinanceFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.financeFragment -> {
-                findNavController().navigate(
-                    FinanceFragmentDirections.actionFinanceFragmentToCategoryEditorFragment(null, null, null)
-                )
+            R.id.categoryEditorFragment -> {
+                return false
             }
             R.id.action_enable_notifications -> {
                 val intent = Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")

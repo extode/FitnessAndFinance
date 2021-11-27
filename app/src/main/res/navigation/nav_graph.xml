@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/financeFragment">
     <fragment
         android:id="@+id/categoryEditorFragment"
         android:name="com.compilinghappen.fitnessandfinance.categoryeditor.CategoryEditorFragment"
@@ -46,12 +46,8 @@
             app:destination="@id/categoryEditorFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.compilinghappen.fitnessandfinance.MainFragment"
-        android:label="Главная"
-        tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_mainFragment_to_financeFragment"
-            app:destination="@id/financeFragment" />
-    </fragment>
+        android:id="@+id/fitnessFragment"
+        android:name="com.compilinghappen.fitnessandfinance.fitness.FitnessFragment"
+        android:label="Фитнес"
+        tools:layout="@layout/fragment_fitness" />
 </navigation>

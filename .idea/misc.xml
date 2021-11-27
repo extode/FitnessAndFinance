@@ -8,6 +8,8 @@
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/drawable/circular_progress_bar_background.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/drawable/circular_progress_bar_foreground.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/drawable/custom_progress_bar.xml" value="0.23177083333333334" />
+        <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/drawable/ic_finance_48.xml" value="0.23177083333333334" />
+        <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/drawable/logo_gradient.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/drawable/progress_bar_foreground.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/cardview_layout.xml" value="0.5" />
@@ -19,11 +21,12 @@
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_category_builder.xml" value="0.33" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_category_editor.xml" value="0.33" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_finance.xml" value="0.33" />
-        <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_fitness.xml" value="0.22" />
+        <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_fitness.xml" value="0.25" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_fitness_calc.xml" value="0.33" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_fitness_main.xml" value="0.22" />
-        <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_main.xml" value="0.33" />
+        <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/layout/fragment_main.xml" value="0.22" />
         <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/menu/menu_finance.xml" value="0.215625" />
+        <entry key="..\:/Users/refrigerator2k/AndroidStudioProjects/fitnessandfinance/app/src/main/res/menu/nav_menu_main.xml" value="0.33" />
       </map>
     </option>
   </component>
