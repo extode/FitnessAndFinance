@@ -17,7 +17,12 @@
 
         <item name="progressBarBackgroundColor">#2DFFFFFF</item>
         <item name="progressBarForegroundColor">?colorSecondary</item>
+
+        <item name="textInputStyle">@style/Widget.FitnessNFinance.TextEdit</item>
+
     </style>
 
-
+    <style name="Widget.FitnessNFinance.TextEdit" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintTextColor">@color/yellow</item>
+    </style>
 </resources>
