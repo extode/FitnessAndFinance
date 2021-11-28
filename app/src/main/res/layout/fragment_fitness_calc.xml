@@ -7,28 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".fitness.FitnessCalcFragment">
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/textField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Пол"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proteinTextView"
-        tools:ignore="SpeakableTextPresentCheck">
-
-    </androidx.appcompat.widget.AppCompatSpinner>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="#D2D2D2"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,18 +21,16 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:clickable="false">
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text="Масса, калории и пульс"
                 android:textAppearance="@style/TextAppearance.FitnessNFinance.CardView.Heading"
-                android:textColor="#828F94"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -56,10 +39,8 @@
                 android:id="@+id/heightTextView"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:hint="Рост, см"
-                android:textColorHint="#828F94"
                 app:layout_constraintEnd_toStartOf="@+id/massTextView"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +50,6 @@
                     android:id="@+id/heightValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#D2D2D2"
                     android:numeric="decimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -78,20 +58,16 @@
                 android:id="@+id/massTextView"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
                 android:hint="Масса, кг"
-                android:textColorHint="#828F94"
                 app:layout_constraintEnd_toStartOf="@+id/ageTextView"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/heightTextView"
-                app:layout_constraintTop_toBottomOf="@+id/textView8">
+                app:layout_constraintTop_toTopOf="@+id/heightTextView">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/massValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#D2D2D2"
                     android:numeric="decimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -100,88 +76,73 @@
                 android:id="@+id/ageTextView"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:hint="Возраст"
-                android:textColorHint="#828F94"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/massTextView"
-                app:layout_constraintTop_toBottomOf="@+id/textView8">
+                app:layout_constraintTop_toTopOf="@+id/massTextView">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ageValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#D2D2D2"
                     android:numeric="signed|decimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/sexTextView"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sexField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/speen_bg"
                 android:hint="Пол"
-                android:textColorHint="#828F94"
-                app:layout_constraintEnd_toStartOf="@+id/targetTextView"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toStartOf="@+id/targetField"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/heightTextView">
+                app:layout_constraintTop_toBottomOf="@+id/heightTextView"
+                tools:ignore="SpeakableTextPresentCheck">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/sexValue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#D2D2D2" />
+            </androidx.appcompat.widget.AppCompatSpinner>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/targetTextView"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/targetField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/speen_bg"
                 android:hint="Цель"
-                android:textColorHint="#828F94"
-                app:layout_constraintEnd_toStartOf="@+id/activeTextView"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ageTextView"
+                app:layout_constraintEnd_toStartOf="@+id/activeField"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/sexTextView"
-                app:layout_constraintTop_toBottomOf="@+id/massTextView">
+                app:layout_constraintStart_toEndOf="@+id/sexField"
+                app:layout_constraintTop_toBottomOf="@+id/massTextView"
+                tools:ignore="SpeakableTextPresentCheck">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/targetValue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#D2D2D2" />
+            </androidx.appcompat.widget.AppCompatSpinner>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activeTextView"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/activeField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/speen_bg"
                 android:hint="Активность"
-                android:textColorHint="#828F94"
+                android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/targetTextView"
-                app:layout_constraintTop_toBottomOf="@+id/ageTextView">
+                app:layout_constraintStart_toEndOf="@+id/targetField"
+                app:layout_constraintTop_toBottomOf="@+id/ageTextView"
+                tools:ignore="SpeakableTextPresentCheck">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/activeValue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#D2D2D2" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+            </androidx.appcompat.widget.AppCompatSpinner>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -191,12 +152,23 @@
         android:id="@+id/floatingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundTint="#FF6200EE"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         app:srcCompat="@drawable/dog"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_add_24"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -207,8 +179,6 @@
         android:layout_marginTop="32dp"
         android:text="Value"
         android:textAlignment="center"
-        android:textColor="#6200EE"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/ccalValue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -220,7 +190,9 @@
         android:layout_height="wrap_content"
         android:text="ИМТ"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         app:layout_constraintEnd_toEndOf="@+id/indexMassBodyValue"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/indexMassBodyValue"
         app:layout_constraintTop_toBottomOf="@+id/indexMassBodyValue" />
 
@@ -232,8 +204,6 @@
         android:layout_marginTop="32dp"
         android:text="Value"
         android:textAlignment="center"
-        android:textColor="#6200EE"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/proteinValue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/indexMassBodyValue"
@@ -245,7 +215,9 @@
         android:layout_height="wrap_content"
         android:text="Калории"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         app:layout_constraintEnd_toEndOf="@+id/ccalValue"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/ccalValue"
         app:layout_constraintTop_toBottomOf="@+id/ccalValue" />
 
@@ -253,12 +225,12 @@
         android:id="@+id/proteinTextView"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="Белки"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/fatsTextView"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintEnd_toEndOf="@+id/proteinValue"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ccalTextView"
+        app:layout_constraintStart_toStartOf="@+id/proteinValue"
         app:layout_constraintTop_toBottomOf="@+id/proteinValue" />
 
     <TextView
@@ -269,8 +241,6 @@
         android:layout_marginTop="32dp"
         android:text="Value"
         android:textAlignment="center"
-        android:textColor="#6200EE"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/fatsValue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ccalValue"
@@ -280,12 +250,12 @@
         android:id="@+id/fatsTextView"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="Жиры"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/carbsTextView2"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintEnd_toEndOf="@+id/fatsValue"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/proteinTextView"
+        app:layout_constraintStart_toStartOf="@+id/fatsValue"
         app:layout_constraintTop_toBottomOf="@+id/fatsValue" />
 
     <TextView
@@ -296,8 +266,6 @@
         android:layout_marginTop="32dp"
         android:text="Value"
         android:textAlignment="center"
-        android:textColor="#6200EE"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/carbsValue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/proteinValue"
@@ -307,13 +275,13 @@
         android:id="@+id/carbsTextView2"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="24dp"
         android:text="Углеводы"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/fatsTextView"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintEnd_toEndOf="@+id/carbsValue"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="@+id/carbsValue"
         app:layout_constraintTop_toBottomOf="@+id/carbsValue" />
 
     <TextView
@@ -324,11 +292,20 @@
         android:layout_marginEnd="24dp"
         android:text="Value"
         android:textAlignment="center"
-        android:textColor="#6200EE"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/fatsValue"
         app:layout_constraintTop_toTopOf="@+id/proteinValue" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="Замеры"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/indexMassBodyTexvView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

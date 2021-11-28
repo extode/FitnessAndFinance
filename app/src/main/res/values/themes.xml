@@ -31,7 +31,7 @@
 
     <style name="TextAppearance.FitnessNFinance.CardView.Heading" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">?colorPrimaryVariant</item>
+        <item name="android:textColor">@color/light1</item>
         <item name="android:textStyle">bold</item>
     </style>
 

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.compilinghappen.fitnessandfinance.R
+import com.compilinghappen.fitnessandfinance.databinding.FragmentFitnessBinding
 
 class FitnessFragment : Fragment() {
 
@@ -14,7 +16,15 @@ class FitnessFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_fitness, container, false)
+        val binding = FragmentFitnessBinding.inflate(inflater, container, false);
+
+        binding.calcCardView.setOnClickListener {
+            findNavController().navigate(
+                FitnessFragmentDirections.actionFitnessFragmentToFitnessCalcFragment()
+            )
+        }
+
+        return binding.root
     }
 
 }

@@ -49,5 +49,14 @@
         android:id="@+id/fitnessFragment"
         android:name="com.compilinghappen.fitnessandfinance.fitness.FitnessFragment"
         android:label="Фитнес"
-        tools:layout="@layout/fragment_fitness" />
+        tools:layout="@layout/fragment_fitness" >
+        <action
+            android:id="@+id/action_fitnessFragment_to_fitnessCalcFragment"
+            app:destination="@id/fitnessCalcFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fitnessCalcFragment"
+        android:name="com.compilinghappen.fitnessandfinance.fitness.FitnessCalcFragment"
+        android:label="Калькулятор"
+        tools:layout="@layout/fragment_fitness_calc" />
 </navigation>

@@ -3,7 +3,7 @@
     <style name="Theme.Fitnessandfinance" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/nearblack</item>
-        <item name="colorPrimaryVariant">@color/light2</item>
+        <item name="colorPrimaryVariant">@color/darkgrey</item>
         <item name="colorOnPrimary">@color/light1</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/yellow</item>
@@ -18,4 +18,6 @@
         <item name="progressBarBackgroundColor">#2DFFFFFF</item>
         <item name="progressBarForegroundColor">?colorSecondary</item>
     </style>
+
+
 </resources>
