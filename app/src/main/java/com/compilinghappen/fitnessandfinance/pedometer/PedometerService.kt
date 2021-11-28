@@ -35,19 +35,8 @@ class PedometerService : Service(), SensorEventListener {
             // For our sample, we just sleep for 5 seconds.
             try {
                 while (true) {
-                    while (true) {
-                        val notification = NotificationCompat.Builder(baseContext, MainActivity.PEDOMETER_CHANNEL_ID)
-                            .setContentTitle("Шагомер")
-                            .setContentText("Количество шагов: $NUMBER_OF_STEPS")
-                            .setSmallIcon(R.drawable.ic_launcher_foreground)
-                            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                            .setContentIntent(pendingIntent)
-                            .build()
-
-                        startForeground(NOTIFICATION_ID, notification)
-                        ++NUMBER_OF_STEPS
-                        Thread.sleep(1000)
-                    }
+                    ++NUMBER_OF_STEPS
+                    Thread.sleep(1000)
                 }
             } catch (e: InterruptedException) {
                 // Restore interrupt status.
@@ -93,7 +82,6 @@ class PedometerService : Service(), SensorEventListener {
     }
 
     override fun onDestroy() {
-        Toast.makeText(this, "service done", Toast.LENGTH_SHORT).show()
         //sensorManager.unregisterListener(this)
     }
 
