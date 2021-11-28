@@ -6,7 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [ReceiptDb::class, CategoryDb::class], version = 1, exportSchema = false)
+@Database(
+    entities = [ReceiptDb::class, CategoryDb::class, FitnessData::class],
+    version = 1,
+    exportSchema = false
+)
 @TypeConverters(Converters::class)
 abstract class FNFDatabase : RoomDatabase() {
     companion object {
@@ -29,5 +33,6 @@ abstract class FNFDatabase : RoomDatabase() {
 
     abstract val categoryDao: CategoryDao
     abstract val receiptDao: ReceiptDao
+    abstract val fitnessDataDao: FitnessDataDao
 }
 

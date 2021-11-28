@@ -53,10 +53,18 @@
         <action
             android:id="@+id/action_fitnessFragment_to_fitnessCalcFragment"
             app:destination="@id/fitnessCalcFragment" />
+        <action
+            android:id="@+id/action_fitnessFragment_to_workoutListFragment"
+            app:destination="@id/workoutListFragment" />
     </fragment>
     <fragment
         android:id="@+id/fitnessCalcFragment"
         android:name="com.compilinghappen.fitnessandfinance.fitness.FitnessCalcFragment"
         android:label="Калькулятор"
         tools:layout="@layout/fragment_fitness_calc" />
+    <fragment
+        android:id="@+id/workoutListFragment"
+        android:name="com.compilinghappen.fitnessandfinance.fitness.WorkoutListFragment"
+        android:label="Упражнения"
+        tools:layout="@layout/fragment_workout_list" />
 </navigation>

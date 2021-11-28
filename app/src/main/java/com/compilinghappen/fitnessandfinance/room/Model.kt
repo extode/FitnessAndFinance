@@ -2,6 +2,7 @@ package com.compilinghappen.fitnessandfinance.room
 
 import androidx.room.*
 import java.math.BigDecimal
+import java.util.*
 
 @Entity(tableName = "receipts")
 data class ReceiptDb(
@@ -41,4 +42,13 @@ data class CategoryWithReceiptsDb(
         entityColumn = "fk_categoryId"
     )
     val receipts: List<ReceiptDb>
+)
+
+@Entity(tableName = "fitness")
+data class FitnessData(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long,
+    var weight: String,
+    var waistCircumference: String,
+    var date: Date = Date()
 )
