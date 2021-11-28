@@ -10,11 +10,21 @@ import com.compilinghappen.fitnessandfinance.room.ReceiptDao
 import kotlinx.coroutines.*
 
 class FinanceViewModel(private val categoryDao: CategoryDao, private val receiptDao: ReceiptDao) : ViewModel() {
+    companion object {
+        const val SHOW_HINT = 1
+        const val HIDE_HINT = 2
+    }
+
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
     private val _categoryItems = MutableLiveData<List<CategoryItem>>()
     val categoryItems: LiveData<List<CategoryItem>>
         get() = _categoryItems
+
+    private val _showHintEvent = MutableLiveData<Int>()
+    // 1 - show, 2 - hide, else - do nothing
+    val showHintEvent: LiveData<Int>
+        get() = _showHintEvent
 
     fun init() {
         _load()
@@ -33,6 +43,11 @@ class FinanceViewModel(private val categoryDao: CategoryDao, private val receipt
     private fun _load() {
         coroutineScope.launch {
             val items = _loadCategoryItems()
+            if (items.isEmpty()) {
+                _showHintEvent.value = SHOW_HINT
+            } else {
+                _showHintEvent.value = HIDE_HINT
+            }
             _categoryItems.value = items
         }
     }
@@ -41,6 +56,8 @@ class FinanceViewModel(private val categoryDao: CategoryDao, private val receipt
         val items = ArrayList<CategoryItem>()
         withContext(Dispatchers.IO) {
             val dbCategories = categoryDao.getAllNoLiveData()
+
+
             for (dbCategory in dbCategories) {
                 val receipts = receiptDao.getByCategoryId(dbCategory.pk_categoryId)
                 val sum = receipts.sumOf { it.cost }
@@ -70,5 +87,9 @@ class FinanceViewModel(private val categoryDao: CategoryDao, private val receipt
     override fun onCleared() {
         super.onCleared()
         coroutineScope.cancel()
+    }
+
+    fun showHintEventHandled() {
+        _showHintEvent.value = 0
     }
 }

@@ -12,4 +12,21 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/finance_card_item_1" />
 
+    <FrameLayout
+        android:id="@+id/finance_fragment_hint_widget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text='Для начала, включите доступ к уведомлениям. Это можно сделать, нажав сверху на 3 точки и выбрать соответствующий пункт. Затем в том же меню выберите пункт "Редактировать категории", чтобы начать их создавать'
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
 </FrameLayout>

@@ -35,6 +35,16 @@ class FinanceFragment : Fragment() {
             adapter.applyData(it)
         }
 
+        viewModel.showHintEvent.observe(viewLifecycleOwner) {
+            if (it == FinanceViewModel.SHOW_HINT) {
+                binding.financeFragmentHintWidget.visibility = View.VISIBLE
+                viewModel.showHintEventHandled()
+            } else if (it == FinanceViewModel.HIDE_HINT) {
+                binding.financeFragmentHintWidget.visibility = View.GONE
+                viewModel.showHintEventHandled()
+            }
+        }
+
         setHasOptionsMenu(true)
         return binding.root
     }
