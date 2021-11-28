@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -62,63 +63,64 @@ class FitnessCalcFragment : Fragment() {
         )
         binding.targetField.adapter = targetAdapter
 
-
         binding.floatingButton.setOnClickListener() {
-            val mass: Double = binding.massValue.text.toString().toDouble()
-            val height: Double = binding.heightValue.text.toString().toDouble()
-            val age: Int = binding.ageValue.text.toString().toInt()
-            val sex: String = binding.sexField.selectedItem.toString()
-            val target: String = binding.targetField.selectedItem.toString()
-            val active: String = binding.activeField.selectedItem.toString()
-            var imb = 0.0
-            var ccal = 0
-            var protein = 0
-            var fats = 0
-            var carbs = 0
-            var activeChange = 0.0
-            var massChange = 0.0
-            val activeId: Int = binding.activeField.selectedItemId.toInt()
-            val sexId: Int = binding.sexField.selectedItemId.toInt()
-            val targetInt = binding.targetField.selectedItemId.toInt()
+            try {
+                val mass: Double = binding.massValue.text.toString().toDouble()
+                val height: Double = binding.heightValue.text.toString().toDouble()
+                val age: Int = binding.ageValue.text.toString().toInt()
+                val activeId: Int = binding.activeField.selectedItemId.toInt()
+                val sexId: Int = binding.sexField.selectedItemId.toInt()
+                val targetInt = binding.targetField.selectedItemId.toInt()
+                var imb = 0.0
+                var ccal = 0
+                var protein = 0
+                var fats = 0
+                var carbs = 0
+                var activeChange = 0.0
+                var massChange = 0.0
 
-            when (activeId) {
-                0 -> activeChange = 1.2
-                1 -> activeChange = 1.375
-                2 -> activeChange = 1.55
-                3 -> activeChange = 1.725
-                4 -> activeChange = 1.9
+                when (activeId) {
+                    0 -> activeChange = 1.2
+                    1 -> activeChange = 1.375
+                    2 -> activeChange = 1.55
+                    3 -> activeChange = 1.725
+                    4 -> activeChange = 1.9
+                }
+
+                when (targetInt) {
+                    0 -> massChange = mass / (0.45 * 4)
+                    1 -> massChange = mass
+                    2 -> {
+                        massChange = mass
+                        ccal = 467
+                    }
+                }
+
+                when (sexId) {
+                    0 -> {
+                        imb = mass / (height * height) * 10000
+                        ccal += ((88.36 + (13.4 * massChange) + (4.8 * height) - (5.7 * age)) * activeChange).toInt()
+                        protein = ((ccal * 0.3) / 4).toInt()
+                        fats = ((ccal * 0.3) / 9).toInt()
+                        carbs = ((ccal * 0.4) / 4).toInt()
+                    }
+                    1 -> {
+                        imb = mass / (height * height) * 10000
+                        ccal += ((447.6 + (9.2 * massChange) + (3.1 * height) - (4.3 * age)) * activeChange).toInt()
+                        protein = ((ccal * 0.3) / 4).toInt()
+                        fats = ((ccal * 0.3) / 9).toInt()
+                        carbs = ((ccal * 0.4) / 4).toInt()
+                    }
+                }
+                binding.indexMassBodyValue.text = ("%.2f".format(imb))
+                binding.ccalValue.text = ccal.toString()
+                binding.proteinValue.text = protein.toString()
+                binding.fatsValue.text = fats.toString()
+                binding.carbsValue.text = carbs.toString()
+            }catch (e: NumberFormatException){
+                Toast.makeText(requireContext(), "Введите все значения корректно!", Toast.LENGTH_SHORT).show()
             }
 
-            when (targetInt) {
-                0 -> massChange = mass / (0.45 * 4)
-                1 -> massChange = mass
-                2 -> {
-                    massChange = mass
-                    ccal = 467
-                }
-            }
-
-            when (sexId) {
-                0 -> {
-                    imb = mass / (height * height) * 10000
-                    ccal += ((88.36 + (13.4 * massChange) + (4.8 * height) - (5.7 * age)) * activeChange).toInt()
-                    protein = ((ccal * 0.3) / 4).toInt()
-                    fats = ((ccal * 0.3) / 9).toInt()
-                    carbs = ((ccal * 0.4) / 4).toInt()
-                }
-                1 -> {
-                    imb = mass / (height * height) * 10000
-                    ccal += ((447.6 + (9.2 * massChange) + (3.1 * height) - (4.3 * age)) * activeChange).toInt()
-                    protein = ((ccal * 0.3) / 4).toInt()
-                    fats = ((ccal * 0.3) / 9).toInt()
-                    carbs = ((ccal * 0.4) / 4).toInt()
-                }
-            }
-            binding.indexMassBodyValue.text = ("%.2f".format(imb))
-            binding.ccalValue.text = ccal.toString()
-            binding.proteinValue.text = protein.toString()
-            binding.fatsValue.text = fats.toString()
-            binding.carbsValue.text = carbs.toString()
         }
 
         binding.fitnessCalcFabAdd.setOnClickListener {
@@ -131,7 +133,11 @@ class FitnessCalcFragment : Fragment() {
                     val weight = view.findViewById<EditText>(R.id.fdd_weight_text).text.toString()
                     val waistCircumference =
                         view.findViewById<EditText>(R.id.fdd_waistCircumference_text).text.toString()
-                    viewModel.addNew(FitnessData(0L, weight, waistCircumference))
+                    if (weight != "" && waistCircumference != ""){
+                        viewModel.addNew(FitnessData(0L, weight, waistCircumference))
+                    } else {
+                        Toast.makeText(requireContext(), "Заполните все поля!", Toast.LENGTH_SHORT).show()
+                    }
                 }
                 .setNeutralButton("Отмена") { a1, a2 ->
                     a1.dismiss()

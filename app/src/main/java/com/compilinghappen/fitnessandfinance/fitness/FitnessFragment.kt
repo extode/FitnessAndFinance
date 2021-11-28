@@ -35,6 +35,7 @@ class FitnessFragment : Fragment() {
         coroutineScope.launch {
             while (isActive) {
                 binding.stepsValueTextView.text = PedometerService.NUMBER_OF_STEPS.toString()
+                binding.caloriesValueTextView.text = ("%.2f".format(binding.stepsValueTextView.text.toString().toInt() * 0.05))
                 delay(1000)
             }
         }

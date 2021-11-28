@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.compilinghappen.fitnessandfinance.databinding.FragmentCategoryBuilderBinding
 import java.math.BigDecimal
@@ -26,8 +27,9 @@ class CategoryBuilderFragment : Fragment() {
             var limit: String? = binding.limitText.text.toString().trim()
             if (limit?.isEmpty() == true)
                 limit = null
-
-            saveCategory(name, filters, limit)
+            if (name != "" && limit != "") {
+                saveCategory(name, filters, limit)
+            } else Toast.makeText(requireContext(), "Заполните все поля!", Toast.LENGTH_SHORT).show()
         }
 
         return binding.root
